@@ -1,0 +1,97 @@
+/* Body Gradient Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #46054b, #063f57); /* Gradient background */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Login Container */
+  .login-container {
+    background: linear-gradient(120deg, #063746, #00080d); /* Gradient background for the container */
+    padding: 2rem; /* Inner spacing */
+    border-radius: 40px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    width: 100%;
+    max-width: 400px; /* Maximum width for responsiveness */
+    text-align: center; /* Center-align text */
+  }
+  
+  /* Heading inside the login container */
+  .login-container h2 {
+    margin-bottom: 1.5rem; /* Spacing below the heading */
+    color: #fffbfb; /* White text color */
+  }
+  
+  /* Form Group (container for input fields and labels) */
+  .form-group {
+    margin-bottom: 1.5rem; /* Spacing between form groups */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Label for input fields */
+  .form-group label {
+    display: block; /* Make labels block-level for better spacing */
+    margin-bottom: 0.5rem; /* Spacing below the label */
+    color: #ffffff; /* White text color */
+  }
+  
+  /* Input fields */
+  .form-group input {
+    width: 100%; /* Full width */
+    padding: 0.8rem; /* Inner padding */
+    border: 1px solid black; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Input field focus state */
+  .form-group input:focus {
+    border-color: #ffffff; /* Change border color on focus */
+  }
+  
+  /* Error Messages */
+  .error-message {
+    color: #ff3860; /* Red color for error messages */
+    font-size: 0.875rem; /* Smaller font size */
+    margin-top: 0.25rem; /* Spacing above the error message */
+    display: none; /* Hidden by default */
+  }
+  
+  /* Forgot Password Link */
+  .forgot-password {
+    display: block; /* Make the link block-level */
+    margin-bottom: 1.5rem; /* Spacing below the link */
+    color: #ffffff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.875rem; /* Smaller font size */
+  }
+  
+  /* Forgot Password Link hover state */
+  .forgot-password:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: chartreuse; /* Change color on hover */
+  }
+  
+  /* Login Button */
+  .login-button {
+    width: 100%; /* Full width */
+    padding: 0.8rem; /* Inner padding */
+    background: rgb(86, 5, 89); /* Button background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease; /* Smooth background transition */
+  }
+  
+  /* Login Button hover state */
+  .login-button:hover {
+    background: #083958; /* Change background color on hover */
+  }
