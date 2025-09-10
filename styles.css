@@ -1,0 +1,313 @@
+/* --- Universal Styles & Variables --- */
+        :root {
+            --primary-color: #6a5af9;
+            --secondary-color: #f7776a;
+            --background-color: #f0f2f5;
+            --container-bg-color: #ffffff;
+            --text-color: #333333;
+            --light-text-color: #ffffff;
+            --input-bg-color: #eeeeee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 1rem;
+        }
+        
+        /* --- Main Container Styling --- */
+        .container {
+            position: relative;
+            width: 768px;
+            max-width: 100%;
+            min-height: 520px; /* Increased height for better spacing */
+            background-color: var(--container-bg-color);
+            border-radius: 20px; /* Softer corners */
+            overflow: hidden;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+        
+        /* --- Form Container & General Form Elements --- */
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            background-color: var(--container-bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            font-weight: 700;
+            margin: 0 0 1rem;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons a {
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            height: 40px;
+            width: 40px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        span {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .form-container input {
+            background-color: var(--input-bg-color);
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+            border-radius: 8px;
+            outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-container input:focus {
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+        
+        a.forgot-password {
+            font-size: 13px;
+            text-decoration: none;
+            color: var(--text-color);
+            margin: 15px 0;
+            transition: color 0.3s ease;
+        }
+
+        a.forgot-password:hover {
+            color: var(--primary-color);
+        }
+        
+        button {
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            background: linear-gradient(135deg, #0f172a 0%, #3d0a50 50%, #5c0628 100%);
+            color: var(--light-text-color);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 80ms ease-in, box-shadow 0.3s ease;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+        
+        button:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        button.ghost {
+            background-color: transparent;
+            border-color: var(--light-text-color);
+            background: none;
+        }
+        
+        /* --- Sign-In and Sign-Up Specific Positioning --- */
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .sign-up-container {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+        
+        /* --- Overlay Container & Panels (The Animated Part) --- */
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out;
+            z-index: 100;
+        }
+
+        .overlay {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            color: var(--light-text-color);
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .overlay-panel {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            margin: 20px 0 30px;
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        /* --- Animation Triggers (Activated by JS) --- */
+        .container.right-panel-active .sign-in-container {
+            transform: translateX(100%);
+        }
+
+        .container.right-panel-active .overlay-container {
+            transform: translateX(-100%);
+        }
+
+        .container.right-panel-active .sign-up-container {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: show 0.6s;
+        }
+
+        @keyframes show {
+            0%, 49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+            50%, 100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        .container.right-panel-active .overlay {
+            transform: translateX(50%);
+        }
+
+        .container.right-panel-active .overlay-left {
+            transform: translateX(0);
+        }
+
+        .container.right-panel-active .overlay-right {
+            transform: translateX(20%);
+        }
+        
+        /* --- Responsive Design for Mobile Devices --- */
+        @media (max-width: 768px) {
+            .container {
+                min-height: 100vh;
+                width: 100vw;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .form-container {
+                width: 100%;
+            }
+
+            .sign-in-container {
+                z-index: 2; /* Ensure sign-in is on top initially */
+            }
+
+            .sign-up-container {
+                 z-index: 1; /* Sign-up starts behind */
+                 opacity: 0;
+            }
+
+            .overlay-container {
+                display: none; /* Hide the sliding overlay on mobile */
+            }
+
+            /* Simple fade transition for mobile */
+            .container.right-panel-active .sign-in-container {
+                transform: none;
+                opacity: 0;
+                z-index: 1;
+            }
+
+            .container.right-panel-active .sign-up-container {
+                transform: none;
+                opacity: 1;
+                z-index: 2;
+                animation: none; /* Disable desktop animation */
+            }
+
+            /* Add toggle links for mobile */
+            .mobile-toggle-links {
+                display: block;
+                text-align: center;
+                margin-top: 1.5rem;
+                font-size: 14px;
+            }
+            
+            .mobile-toggle-links a {
+                color: var(--primary-color);
+                font-weight: bold;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
